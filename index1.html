@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word Game</title>
+	<style type="text/css">
+		* {
+			background: black;
+			color: white;
+		}
+		#a{
+			width: 450px;
+			background: red;
+			margin-left: 32%;
+			margin-top: 200px;
+			padding: 10px;
+			text-align: center;
+		}
+		#b{
+			width: 450px;
+			background: red;
+			margin-left: 32%;
+			margin-top: 10px;
+			padding: 10px;
+			text-align: center;
+		}
+		font {
+			background: red;
+		}
+		.overlay{
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0, 0.9);
+			overflow-x: hidden;
+			transition: 0.5s;
+		}
+		.overlay-content {
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+		}
+		.overlay p {
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+		.overlay a {
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+		.overlay .closebtn {
+		  	position: absolute;
+		  	top: 20px;
+		  	right: 45px;
+		  	font-size: 60px;
+		}
+		.ali{
+			margin-left: 90%;
+		}
+	</style>
+</head>
+<body>
+	<div id="myNav" class="overlay">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<div class="overlay-content">
+    		<p>frontender: Ali</p>
+    		<p>backender: Ali</p>
+    		<p>created by USA company</p>
+  		</div>
+  	</div>
+  	<div id="my" class="overlay">
+  		<a href="javascript:void(0)" class="closebtn" onclick="cNav()">&times;</a>
+  		<div class="overlay-content">
+  			<p>İlk başda sağdaki boşluqa söz daxil etməlisən.</p>
+    		<p>Verilmiş 5 hərifli sözü tapmaqa çalışırsan.</p>
+    		<p>əgər hərfin rəngi yaşıldırsa, hərf tapmalı olduğun sözdə tapdığın yerdədir.</p>
+    		<p>əgər hərfin rəngi sarıdırsa, hərf tapmalı olduğun sözdə fərqli yerdədir.</p>
+    		<p>əgər hərfin rəngi qırmızıdırsa, hərf sözdə yoxdur.</p>
+  		</div>
+  	</div>
+  	<span class="ali" style="font-size:30px;cursor:pointer" onclick="oNav()">&#9776;</span>
+	<button id="a" class="a" onclick="location.href = 'index.html'"><font size="+10">play</font></button>
+	<button id="b" onclick="openNav()"><font size="+10">credits</font></button>
+	<script type="text/javascript">
+		function openNav() {
+			document.getElementById("myNav").style.width = "100%";
+		}
+
+		function closeNav() {
+  			document.getElementById("myNav").style.width = "0%";
+		}
+		function oNav() {
+			document.getElementById("my").style.width = "100%";
+		}
+		function cNav() {
+			document.getElementById("my").style.width = "0";
+		}
+		window.alert("Big update: \n-Ana ekran əlavə olundu \n-Sözü artıq koddan dəyişməyə ehtiyac olmur \n-İstədiyiniz kimi hərfləri böyük və ya kiçik yaza bilərsiniz \n-hərf əgər sözdə yoxdursa aşağıdakı keyboard-dan silin \n-əgər hərf sözdə doğru yerdədirsə aşağıdakı keyboard-da arxası yaşıl olur\n-user sistemi əlavə olundu \n-oyun qaydaları əlavə olundu");
+	</script>
+</body>
+</html>

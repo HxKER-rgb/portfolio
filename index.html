@@ -1,129 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World game</title>
-</head>
-<body>
-	<input autofocus type="text" id="Text1">
-	<input placeholder="Söz daxil et" type="text" id="Text2">
-	<br>
-	<br>
-	<button onclick="myFunction()" id="button1">ENTER</button>
-	<button onclick="f()" style="margin-left:617px;" id="button2">Yeni söz</button>
-	<br>
-	<br>
-	<table>
-		<tr>
-			<th id="1"></th>
-			<th id="2"></th>
-			<th id="3"></th>
-			<th id="4"></th>
-			<th id="5"></th>
-		</tr>
-		<tr>
-			<th id="6"></th>
-			<th id="7"></th>
-			<th id="8"></th>
-			<th id="9"></th>
-			<th id="10"></th>
-		</tr>
-		<tr>
-			<th id="11"></th>
-			<th id="12"></th>
-			<th id="13"></th>
-			<th id="14"></th>
-			<th id="15"></th>
-		</tr>
-		<tr>
-			<th id="16"></th>
-			<th id="17"></th>
-			<th id="18"></th>
-			<th id="19"></th>
-			<th id="20"></th>
-		</tr>
-		<tr>
-			<th id="21"></th>
-			<th id="22"></th>
-			<th id="23"></th>
-			<th id="24"></th>
-			<th id="25"></th>
-		</tr>
-		<tr>
-			<th id="26"></th>
-			<th id="27"></th>
-			<th id="28"></th>
-			<th id="29"></th>
-			<th id="30"></th>
-		</tr>
+    <style>
+        table,
+        th {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 15px 15px;
+        }
 
-	</table>
-	<span id = 'demo' style="display: block;"></span>
-	<div style="margin-left: 900px">
-		<input type="text" id="user">
-		<br>
-		<button onclick="add_user()">add user</button>
-		<br>
-		<span id="user1"></span>
-		<br>
-		<span id="user2"></span>
-		<br>
-		<span id="user3"></span>
-		<br>
-		<span id="user4"></span>
-		<br>
-		<span id="user5"></span>
-	</div>
-	
-	<table>
-		<tr>
-			<th id="q">Q</th>
-			<th id="ü">Ü</th>
-			<th id="e">E</th>
-			<th id="r">R</th>
-			<th id="t">T</th>
-			<th id="y">Y</th>
-			<th id="u">U</th>
-			<th id="i">İ</th>
-			<th id="o">O</th>
-			<th id="p">P</th>
-			<th id="ö">Ö</th>
-			<th id="ğ">Ğ</th>
-		</tr>
-	</table>
-	<table style="margin-left: 20px">
-		<tr>
-			<th id="a">A</th>
-			<th id="s">S</th>
-			<th id="d">D</th>
-			<th id="f">F</th>
-			<th id="g">G</th>
-			<th id="h">H</th>
-			<th id="j">J</th>
-			<th id="k">K</th>
-			<th id="l">L</th>
-			<th id="ı">I</th>
-			<th id="ə">Ə</th>
-		</tr>
-	</table>
-	<table style="margin-left: 50px">
-		<tr>
-			<th id="z">Z</th>
-			<th id="x">X</th>
-			<th id="c">C</th>
-			<th id="v">V</th>
-			<th id="b">B</th>
-			<th id="n">N</th>
-			<th id="m">M</th>
-			<th id="ç">Ç</th>
-			<th id="ş">Ş</th>
-		</tr>
-	</table>
-	<!--<div>Time left = <span id="timer"></span></div>
+        body {
+            background: black;
+            color: white;
+            /*width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #010758, #490d61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;*/
+        }
+
+        button {
+            background: white;
+            color: black;
+        }
+
+        /*div{
+  background-color:#419D78;
+  color: black;
+  font-size:20px;
+  text-align:center;
+}*/
+        #Text2 {
+            margin-left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <input autofocus type="text" id="Text1">
+    <input placeholder="Söz daxil et" type="text" id="Text2">
+    <br>
+    <br>
+    <button onclick="myFunction()" id="button1">ENTER</button>
+    <button onclick="f()" style="margin-left:617px;" id="button2">Yeni söz</button>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th id="1"></th>
+            <th id="2"></th>
+            <th id="3"></th>
+            <th id="4"></th>
+            <th id="5"></th>
+        </tr>
+        <tr>
+            <th id="6"></th>
+            <th id="7"></th>
+            <th id="8"></th>
+            <th id="9"></th>
+            <th id="10"></th>
+        </tr>
+        <tr>
+            <th id="11"></th>
+            <th id="12"></th>
+            <th id="13"></th>
+            <th id="14"></th>
+            <th id="15"></th>
+        </tr>
+        <tr>
+            <th id="16"></th>
+            <th id="17"></th>
+            <th id="18"></th>
+            <th id="19"></th>
+            <th id="20"></th>
+        </tr>
+        <tr>
+            <th id="21"></th>
+            <th id="22"></th>
+            <th id="23"></th>
+            <th id="24"></th>
+            <th id="25"></th>
+        </tr>
+        <tr>
+            <th id="26"></th>
+            <th id="27"></th>
+            <th id="28"></th>
+            <th id="29"></th>
+            <th id="30"></th>
+        </tr>
+
+    </table>
+    <span id='demo' style="display: block;"></span>
+    <div style="margin-left: 900px">
+        <input type="text" id="user">
+        <br>
+        <button onclick="add_user()">add user</button>
+        <br>
+        <span id="user1"></span>
+        <br>
+        <span id="user2"></span>
+        <br>
+        <span id="user3"></span>
+        <br>
+        <span id="user4"></span>
+        <br>
+        <span id="user5"></span>
+    </div>
+
+    <table>
+        <tr>
+            <th id="q">Q</th>
+            <th id="ü">Ü</th>
+            <th id="e">E</th>
+            <th id="r">R</th>
+            <th id="t">T</th>
+            <th id="y">Y</th>
+            <th id="u">U</th>
+            <th id="i">İ</th>
+            <th id="o">O</th>
+            <th id="p">P</th>
+            <th id="ö">Ö</th>
+            <th id="ğ">Ğ</th>
+        </tr>
+    </table>
+    <table style="margin-left: 20px">
+        <tr>
+            <th id="a">A</th>
+            <th id="s">S</th>
+            <th id="d">D</th>
+            <th id="f">F</th>
+            <th id="g">G</th>
+            <th id="h">H</th>
+            <th id="j">J</th>
+            <th id="k">K</th>
+            <th id="l">L</th>
+            <th id="ı">I</th>
+            <th id="ə">Ə</th>
+        </tr>
+    </table>
+    <table style="margin-left: 50px">
+        <tr>
+            <th id="z">Z</th>
+            <th id="x">X</th>
+            <th id="c">C</th>
+            <th id="v">V</th>
+            <th id="b">B</th>
+            <th id="n">N</th>
+            <th id="m">M</th>
+            <th id="ç">Ç</th>
+            <th id="ş">Ş</th>
+        </tr>
+    </table>
+    <!--<div>Time left = <span id="timer"></span></div>
 	<button onclick="timer">as</button>-->
-	<br>
-	<button onclick="restart()">next round</button>
-	<span id="choosen_user" style="margin-left: 100px; border: solid; padding: 5px 50px; background: white; border-color: white; color: black"></span>
+    <br>
+    <button onclick="restart()">next round</button>
+    <span id="choosen_user"
+        style="margin-left: 100px; border: solid; padding: 5px 50px; background: white; border-color: white; color: black"></span>
+
+    <script>
+        var ai = 0;
+        var s = "";
+        var f_open = false;
+        var restart_start = false;
+        var count = 0;
+        var users = new Map;
+        var user_count = 1;
+        var choose_user = 0;
+        function myFunction() {
+            document.getElementById("choosen_user").innerHTML = Array.from(users.keys())[choose_user];
+            if (f_open == false) {
+                window.alert('söz daxil et');
+                document.getElementById("Text2").focus();
+                return;
+            }
+            var x = document.getElementById("Text1");
+            var text = "";
+            var i, j, k = 0, a = [];
+            var s1 = "", s2 = "";
+            text = x.value;
+            s = s.toLowerCase();
+            text = text.toLowerCase();
+            if (text.length == 0) {
+                return;
+            }
+            if (text.length > 5) {
+                window.alert("5 hərifdən çox hərf daxil etmək olmaz");
+                return;
+            }
+            for (i = 0; i < s.length; i++) {
+                if (s[i] == text[i]) {
+                    k++;
+                    s2 += text[i] + ' ';
+                    a[i] = 1;
+                }
+                else {
+                    a[i] = 0;
+                }
+                console.log(a[i]);
+            }
+            for (i = 0; i < text.length; i++) {
+                if (a[i] == 0) {
+                    for (j = 0; j < s.length; j++) {
+                        if (text[i] == s[j]) {
+                            a[i] = 2;
+                        }
+                    }
+                }
+            }
+            for (i = 0; i < text.length; i++) {
+                if (a[i] == 0) {
+                    document.getElementById(text[i].toLowerCase()).style.color = "#000";
+                    document.getElementById((i + 1) + ai).innerHTML = text[i];
+                    document.getElementById((i + 1) + ai).style.background = "#f00";
+                    document.getElementById((i + 1) + ai).style.color = "#000";
+                }
+                if (a[i] == 1) {
+                    document.getElementById(text[i].toLowerCase()).style.background = "#0f0";
+                    document.getElementById(text[i].toLowerCase()).style.color = "#000";
+                    document.getElementById((i + 1) + ai).innerHTML = text[i];
+                    document.getElementById((i + 1) + ai).style.background = "#0f0";
+                    document.getElementById((i + 1) + ai).style.color = "#000";
+                }
+                if (a[i] == 2) {
+                    document.getElementById((i + 1) + ai).innerHTML = text[i];
+                    document.getElementById((i + 1) + ai).style.background = "#ff0";
+                    document.getElementById((i + 1) + ai).style.color = "#000";
+                }
+            }
+            ai += 5;
+            for (i = 0; i < a.length; i++) {
+                if (a[i] == 2) {
+                    s1 += text[i] + ' ';
+                }
+            }
+            if (text == s) {
+                document.getElementById("demo").innerHTML = "Təbriklər qazandınız";
+                window.alert('Təbriklər qazandınız');
+                count = 0;
+                document.getElementById("choosen_user").innerHTML = choose_user;
+                plus_user();
+                document.getElementById("Text1").readOnly = true;
+                document.getElementById("Text2").readOnly = true;
+                document.getElementById("button1").disabled = true;
+                document.getElementById("button2").disabled = true;
+                restart_start = true;
+            }
+            else {
+                document.getElementById("demo").innerHTML = "bəxtini təkrar sına";
+                count++;
+            }
+            console.log("count:", count);
+            if (count == 6) {
+                window.alert("uduzduz");
+                loser_side();
+                document.getElementById("Text1").readOnly = true;
+                document.getElementById("Text2").readOnly = true;
+                document.getElementById("button1").disabled = true;
+                document.getElementById("button2").disabled = true;
+                restart_start = true;
+            }
+        }
+        /*function timer() {
+            document.getElementById('timer').innerHTML =
+              05 + ":" + 11;
+            startTimer();
+        
+        
+            function startTimer() {
+              var presentTime = document.getElementById('timer').innerHTML;
+              var timeArray = presentTime.split(/[:]+/);
+              var m = timeArray[0];
+              var s = checkSecond((timeArray[1] - 1));
+              if(s==59){m=m-1}
+              if(m<0){
+                return
+              }
+              
+              document.getElementById('timer').innerHTML =
+                m + ":" + s;
+              console.log(m)
+              setTimeout(startTimer, 1000);
+              
+            }
+        
+            function checkSecond(sec) {
+              if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+              if (sec < 0) {sec = "59"};
+              return sec;
+            }
+        }*/
+        function f() {
+            var y = document.getElementById("Text2");
+            s = y.value;
+            f_open = true;
+            document.getElementById("Text2").value = "";
+            document.getElementById("Text1").focus();
+        }
+        function restart() {
+            if (restart_start == true) {
+                choose_user += 1;
+                if (choose_user == users.size) {
+                    choose_user = 0;
+                }
+                ai = 0;
+                document.getElementById("demo").innerHTML = "";
+                for (var i = 1; i <= 30; i++) {
+                    document.getElementById(i).style.background = "#000";
+                    document.getElementById(i).innerHTML = "";
+                }
+                var array = "qüertyuiopöğasdfghjklıəzxcvbnmçş";
+                for (var i = 0; i < array.length; i++) {
+                    document.getElementById(array[i]).style.background = "#000";
+                    document.getElementById(array[i]).style.color = "#fff";
+                    document.getElementById(array[i]).innerHTML = array[i].toUpperCase();
+                }
+                document.getElementById("Text1").readOnly = false;
+                document.getElementById("Text2").readOnly = false;
+                document.getElementById("button1").disabled = false;
+                document.getElementById("button2").disabled = false;
+                restart_start = false;
+                f_open = false;
+                s = "";
+                text = "";
+                s1 = "", s2 = "";
+                document.getElementById("Text1").value = "";
+                document.getElementById("Text1").focus();
+                document.getElementById("choosen_user").innerHTML = Array.from(users.keys())[choose_user];
+            }
+        }
+        function add_user() {
+            var users_txt = "user" + user_count.toString();
+            console.log(users_txt);
+            users.set(document.getElementById("user").value, 0);
+            document.getElementById(users_txt).innerHTML = document.getElementById("user").value + ":" + " 0";
+            user_count += 1;
+            document.getElementById("choosen_user").innerHTML = Array.from(users.keys())[choose_user];
+        }
+        function plus_user() {
+            var users_str = "user";
+            for (var i = 0; i < users.size; i++) {
+                if (i != choose_user) {
+                    users.set(Array.from(users.keys())[i], users.get(Array.from(users.keys())[i]) + 1);
+                }
+            }
+            for (var i = 0; i < users.size; i++) {
+                users_str = "user" + (i + 1).toString();
+                document.getElementById(users_str).innerHTML = Array.from(users.keys())[i] + " : " + users.get(Array.from(users.keys())[i]);
+            }
+            document.getElementById("choosen_user").innerHTML = Array.from(users.keys())[choose_user];
+        }
+        function loser_side() {
+            users.set(Array.from(users.keys())[choose_user], users.get(Array.from(users.keys())[choose_user]) + 1);
+            for (var i = 0; i < users.size; i++) {
+                users_str = "user" + (i + 1).toString();
+                document.getElementById(users_str).innerHTML = Array.from(users.keys())[i] + " : " + users.get(Array.from(users.keys())[i]);
+            }
+            document.getElementById("choosen_user").innerHTML = Array.from(users.keys())[choose_user];
+        }
+    </script>
 </body>
+
 </html>
